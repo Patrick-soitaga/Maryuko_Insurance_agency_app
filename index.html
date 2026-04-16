@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Maryuko Insurance Agency provides reliable insurance solutions for you">
+        <meta name="keywords" content="General insurance">
+        <meta name="author" content="Patrick Soitaga Dikirr">
+
+        <title>Maryuko Insurance Agency</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="logo-container" style="height: 190px;">
+                <div class="hexagon">
+                    <div class="bars">
+                        <div class="trapezoidal-bar" style="height: 65px;"></div>
+                        <div class="bar" style="height: 40px;"></div>
+                        <div class="angled-bar" style="height: 67px;"></div>
+                    </div>
+                </div>
+                <div class="logo-texts">
+                    <div class="logo-text">MARYANN</div>
+                    <div class="sub-text">INSURANCE AGENCY LTD</div>
+                </div>
+            </div>
+            <!-- ============= Navigation ============= -->
+            <div class="nav-wrapper">
+                <!-- Humberger Icon -->
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <!---Navigation Links-->
+                <nav class="nav">
+
+                    <!-- <a href="index.html" class="active">Home</a> -->
+                    <a href="#" data-page="home">Home</a>
+                    <a href="#" data-page="insurance">Insurance</a>
+                    <a href="#" data-page="agents">Agents</a>
+                    <a href="#" data-page="support">Customer Support</a>
+                </nav>
+            </div> 
+            
+            <!-- <a href="#" class="btn-quote">Get a Quote</a> -->
+        </header>
+        <main>
+            
+            <!-- ====== HOME PAGE ====== -->
+
+            <section id="home" class="page active">
+                <div class="hero">
+                    <h1 id="hero-text"></h1>
+                    <p>Comprehensive insurance solutions for individuals, families, and businesses.</p>
+                    <a href="quote.html" class="btn">Get a Quote</a>
+                    <a href="#" class="btn btn-outline">Talk to an Agent</a>
+                </div>
+                
+                <!-- CTA Section -->
+                <section class="cta">
+                    <h2>Get Covered Today</h2>
+                    <p>Protect your future with Maryuko Insurance Agency.</p>
+                </section>
+            </section>
+
+            <!-- ========= INSURANCE PAGE ========= -->
+            <section id="insurance" class="page">
+                <h2>Insurance Services</h2>
+
+                <div class="insurance-layout">
+
+                    <!-- Left-side navigation -->
+
+                    <div id="insuranceServices" class="insurance-services">
+                        <button data-service="policies">Policies Management</button>
+                        <button data-service="claims">Claims Processing</button>
+                        <button data-service="certificates">Certificate Processing</button>
+                    </div>
+
+                    <!-- Right-side content area -->
+                    <div class="insurance-content">      
+
+                        <!-- ========= POLICIES PAGE ========= -->
+                        <div id="policies" class="service-page">
+                            <h1>Policies Management</h1>
+                            <p>Manage your insurance policies with ease. View, update, and renew your policies all in one place.</p>
+
+                        </div>
+                        <!-- ========= CLAIMS PAGE ========= -->
+                            
+                        <div id="claims" class="service-page">
+                                
+                            <h1>Claims Processing</h1>
+                                
+                            <p>File and track your insurance claims with our streamlined process.</p>
+                            
+                        </div>
+
+                         <!-- ========= CERTIFICATES PAGE ========= -->
+
+                        <div id="certificates" class="service-page">
+                            <div class="certificates-page">
+                                <fieldset>
+                                    <legend>Business Type</legend>
+                                    <label for="businessType">
+                                        <input type="radio" id="newBusiness" name="businessType" value="individual">
+                                        New Business
+                                    </label>
+                                    <label for="businessType">
+                                        <input type="radio" id="extension" name="businessType" value="business">
+                                        Extension of Business
+                                    </label>
+                                    <label for="businessType">
+                                        <input type="radio" id="renewal" name="businessType" value="renewal">
+                                        Renewal of Business
+                                    </label>
+                                </fieldset>
+                            </div>
+                            <!-- Issue New certificate -->
+                            <div id="certIssuance" class="certificate-pages">
+                                <h2>Issue Certificate</h2>
+                                <form id="certificateForm">
+                                    <fieldset>
+                                        <legend>Policy Details</legend>
+                                        <label for="certificateType">Type of Certificate:</label>
+                                        <select id="certificateType" name="certificateType" required>
+                                            <option value="">Select Certificate Type</option>
+                                            <option value="new">Type A - Bus</option>
+                                            <option value="new">Type A - Matatu</option>
+                                            <option value="new">Type A - Taxi</option>
+                                            <option value="new">Type A - PSV Un  Vehicle</option>
+                                            <option value="new">Type C - Private Vehicle</option>
+                                            <option value="new">Type D - Motorcycle</option>
+                                            <option value="new">Type D - PSV </option>
+                                            <option value="new">Type D - Motor Cycle Commercial</option>
+                                        </select>
+                                        <fieldset class="cover-type">
+                                            <legend>Type of Cover:</legend>
+                                            <label for="thirdParty">
+                                                <input type="radio" id="thirdParty" name="coverType" value="thirdParty">
+                                                Third Party
+                                            </label>
+                                            <label for="comprehensive">
+                                                <input type="radio" id="comprehensive" name="coverType" value="comprehensive">
+                                                Comprehensive
+                                            </label>
+                                            <label for="thirdPartyFireTheft">
+                                                <input type="radio" id="thirdPartyFireTheft" name="coverType" value="thirdPartyFireTheft">
+                                                Third Party, Fire & Theft
+                                            </label>
+                                        </fieldset>
+
+                                        <label for="policyNumber">Policy Number:</label>
+                                        <input type="text" id="policyNumber" name="policyNumber" required>
+                                        <label for="startDate">Start Date:</label>
+                                        <input type="date" id="startDate" name="startDate" required>
+                                        
+                                        <label for="certificateType">Expiry Date Option:</label>
+                                        <select id="expiryDateOption" name="expiryDateOption" required>
+                                            <option value="">- Select -</option>
+                                            <option value="week">Week</option>
+                                            <option value="month">Month</option>
+                                            <option value="year">Year</option>
+                                        </select>
+                                        <label for="expiryDuration">Expiry Duration:</label>
+                                        <select type="number" name="expiryDuration" id="expiryDuration" required>
+                                            <option value="">- Select -</option>
+                                            <option value="number" min="1" max="4">1</option>
+                                            <option value="month" min="1" max="11">1</option>
+                                            <option value="year" min="1" max="1">1</option>
+                                        </select>
+                                        <label for="endDate">End Date:</label>
+                                        <input type="date" id="endDate" name="endDate" required>
+                                        <label for="sumInsured">Sum Insured:</label>
+                                        <input type="number" id="sumInsured" name="sumInsured" required min="0">
+
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Insured Information</legend>
+                                        <label for="insuredName">Insured Full Name:</label>
+                                        <input type="text" id="insuredName" name="insuredName" required>
+                                        <label for="insuredEmail">Insured Email Address:</label>
+                                        <input type="email" id="insuredEmail" name="insuredEmail" required>
+                                        <label for="insuredID">Insured ID Number:</label>
+                                        <input type="text" id="insuredID" name="insuredID" required>
+                                        <label for="insuredContact">Insured Contact Number:</label>
+                                        <input type="tel" id="insuredContact" name="insuredContact" required pattern="[0-9]{10}">
+                                        
+
+                                    </fieldset>
+                                    
+                                    <fieldset>
+                                        <legend>Vehicle Information</legend>
+                                        <label for="regNo">Registration Number:</label>
+                                        <input type="text" id="regNo" name="regNo" required>
+                                        <label for="chasisNo">Chassis Number:</label>
+                                        <input type="text" id="chasisNo" name="chasisNo" required>
+                                        <label for="vehicleMake">Vehicle Make:</label>
+                                        <input type="text" id="vehicleMake" name="vehicleMake" required>
+                                        <label for="vehicleModel">Vehicle Model:</label>
+                                        <input type="text" id="vehicleModel" name="vehicleModel" required>
+                                        <label for="vehicleYear">Vehicle Year:</label>
+                                        <input type="number" id="vehicleYear" name="vehicleYear" required min="1900" max="2024">
+                                        <label for="engineNo">Engine Number:</label>
+                                        <input type="text" id="engineNo" name="engineNo" required>
+                                        <label for="pllNo">Passengers Capacity:</label>
+                                        <input type="number" id="pllNo" name="pllNo" min="1">
+                                        <label for="loadCapacity">Load Capacity:</label>
+                                        <input type="number" id="loadCapacity" name="loadCapacity" min="1">
+                                        <label for="cubicCapacity">Cubic Capacity:</label>
+                                        <input type="number" id="cubicCapacity" name="cubicCapacity" min="1">
+
+                                    </fieldset>
+                                    <div id="formButtons">
+                                        <button type="button" id="backToOptions">Back</button>
+                                        <button type="submit">Submit</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+             </section>
+
+            <!-- ========= SUPPORT PAGE =========
+             -->
+            <section id="support" class="page">
+                <h1>Customer Support</h1>
+                <p>Contact our able Team through either of the platforms herein:</p>
+
+
+            </section>
+
+        </main>
+        <!-- ========= Footer ========= -->
+        <footer>
+            <p>&copy; <span id="year"></span> Maryann Insurance Agency. All Rights Reserved.</p>
+            <p>Phone: +254 723 888 851 | Email: <a href="mailto:info@maryukoinsuranceagency.com">info@maryukoinsuranceagency.com</a></p>
+            <p>Follow us on: Facebook | Instagram | LinkedIn</p>
+        </footer>
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
