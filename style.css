@@ -320,13 +320,13 @@ input:focus, select:focus {
 
 /* --------- CHECKBOX GROUP --------- */
 
-input[type="radio"]{
+.checkbox-row input[type="radio"]{
   width: auto;
   margin-right: 8px;
   padding: 0;
 }
 
-input[type="checkbox"]{
+.checkbox-row input[type="checkbox"]{
   width: auto;
   margin-right: 8px;
   padding: 0;
@@ -514,7 +514,7 @@ button[type="service-button"]:hover {
 
 @media (max-width: 768px) {
   .insurance-layout {
-    grid-template-columns: 1fr 1fr; /* stack layout */
+    grid-template-columns: 1fr; /* stack layout */
   }
 
    .insurance-services {
@@ -539,6 +539,12 @@ button[type="service-button"]:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
   
+}
+/* Radio button cleanup */
+.certificates-page input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+  padding: 0;
 }
 
 /*fieldset styling */
@@ -622,14 +628,21 @@ button[type="service-button"]:hover {
 .cover-type {
   grid-column: span 2;
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  flex-wrap: wrap;
+  
+}
+
+.cover-type input[type="radio"] {
+  width: auto;
+  padding: 0;
+  margin-right: 8px;
 }
 
 /* Radio button cleanup */
 #certIssuance input[type="radio"] {
   width: auto;
-  margin-right: 6px;
+  padding: 0;
   
 }
 
@@ -650,7 +663,7 @@ button[type="service-button"]:hover {
 
   #certIssuance button {
   width: 100%;
-  max-width: 150px;
+  max-width: 100px;
   margin: 20px 0;
   background-color: #04203a;
   color: #ffd700;
@@ -661,6 +674,26 @@ button[type="service-button"]:hover {
   #formButtons {
     display: flex;
     justify-content: space-between;
+    margin: 20px;
+  }
+
+  #formButtons button {
+    width: 48%;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  /* Back button styling */
+  #backToOptions {
+    background-color: #ccc;
+    color: #000
+  }
+
+  /* Submit button styling */
+  #formButtons button[type="submit"] {
+    background-color: #04203a;
+    color: #ffd700;
   }
   
 
@@ -672,27 +705,297 @@ button[type="service-button"]:hover {
 } 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
+  #certIssuance {
+    padding: 20px;
+  }
+
   #certIssuance fieldset {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   #certIssuance legend {
     grid-column: span 1;
   }
+  
+  #formButtons {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  #formButtons button {
+    width: 100%;
+  }
+}
+
+
+/* ================== AGENT SECTION ================== */
+/* This section manages the display of agent account options and forms. It uses flexbox for layout and toggles visibility based on user interaction. The agent options are displayed as links, and clicking on them hides the options and shows the corresponding forms. */
+#agents h1 {
+  margin-top: 30px;
+  color: #04203a;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#agents p {
+  margin: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+#agents a {
+  padding: 12px;
+  margin: 10px;
+  
+}
+
+.agent-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 30px;
+
+}
+/* Style for the links in agent options */
+.agent-options a {
+  flex: 1;
+  padding: 15px;
+  background-color: #04203a;
+  color: #ffd700;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.agent-options a:hover {
+  background-color: #003366;
+  color: white;
+}
+
+.agent-forms {
+  display: none;
+
+    
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.agent-forms.active {
+  display: block;
+}
+
+.agent-forms h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #04203a;
+  font-size: 16px;
+}
+
+.agent-forms form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.agent-forms fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.agent-forms legend {
+  grid-column: span 2;
+  font-weight: bold;
+  font-size: 15px;
+  color: #04203a;
+
+}
+
+.agent-forms label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.agent-forms input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
 
 
+.agent-forms input,
+.agent-forms select {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Flex layout for form fields */
+.agent-forms fieldset div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 
+/* Submit button styling */
+.agent-forms button {
+  width: 48%;
+  max-width: none;
+  margin: 20px auto 0;
+  background-color: #04203a;
+  color: #ffd700;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.agent-forms button:hover {
+  background-color: #003366;
+  color: white;
+}
+
+#signUpButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Sign Up and log in buttons */
+#signUpButtons button {
+  width: 48%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+#formButtons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#formButtons button {
+  width: 48%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.agent-forms input:focus {
+  border-color: #04203a;
+  box-shadow: 0 0 5px rgba(4, 32, 58, 0.5);
+}
 
 
-/* ================== Issuance of Certificate ================== */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .agent-forms fieldset {
+    grid-template-columns: 1fr;
+  }
 
+    .agent-form input,
+    .agent-form select {
+      max-width: 100%;
+    } 
 
+  .agent-forms legend {
+    grid-column: span 1;
+  }
 
+  #signUpButtons {
+    flex-direction: row;
+    gap: 10px;
+  }
 
-/*================== Footer Links ================== */
-/* ================== Media Queries ================== */
+  #signUpButtons button {
+    width: 100%;
+  }
+}
+
+/* ================== END OF AGENT SECTION ================== */
+/* ================== SUPPORT SECTION ================== */
+#support {
+  background-color: #e9ecf0;
+  color: #333;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+#support h1 {
+  color:#04203a;
+  margin-bottom: 10px;
+}
+
+#support p {
+  max-width: 600px;
+  margin: 10px auto;
+  color: #555;
+  font-size: 15px;
+  text-align: left;
+  
+}
+
+/* BUTTON CONTAINER */
+.support-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+/* BUTTON STYLE IMPROVEMENT */
+.support-options .btn {
+  padding: 14px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* PRIMARY BUTTON */
+.support-options .btn {
+  background-color: #04203a;
+  color: #ffd700;
+}
+
+/* OUTLINE BUTTON */
+.support-options .btn-outline {
+  background-color: transparent;
+  border: 2px solid #04203a;
+  color: #04203a;
+}
+
+/* HOVER EFFECT */
+.support-options .btn:hover {
+  background-color: #003366;
+  color: #fff;
+}
+
+.support-options .btn-outline:hover {
+  background-color: #04203a;
+  color: #ffd700;
+}
 
 
 /* ================= Footer Section ================= */

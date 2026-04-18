@@ -135,22 +135,6 @@
                                             <option value="new">Type D - PSV </option>
                                             <option value="new">Type D - Motor Cycle Commercial</option>
                                         </select>
-                                        <fieldset class="cover-type">
-                                            <legend>Type of Cover:</legend>
-                                            <label for="thirdParty">
-                                                <input type="radio" id="thirdParty" name="coverType" value="thirdParty">
-                                                Third Party
-                                            </label>
-                                            <label for="comprehensive">
-                                                <input type="radio" id="comprehensive" name="coverType" value="comprehensive">
-                                                Comprehensive
-                                            </label>
-                                            <label for="thirdPartyFireTheft">
-                                                <input type="radio" id="thirdPartyFireTheft" name="coverType" value="thirdPartyFireTheft">
-                                                Third Party, Fire & Theft
-                                            </label>
-                                        </fieldset>
-
                                         <label for="policyNumber">Policy Number:</label>
                                         <input type="text" id="policyNumber" name="policyNumber" required>
                                         <label for="startDate">Start Date:</label>
@@ -176,6 +160,21 @@
                                         <input type="number" id="sumInsured" name="sumInsured" required min="0">
 
                                     </fieldset>
+                                    <fieldset class="cover-type">
+                                            <legend>Type of Cover:</legend>
+                                            <label for="thirdParty">
+                                                <input type="radio" id="thirdParty" name="coverType" value="thirdParty">
+                                                Third Party
+                                            </label>
+                                            <label for="comprehensive">
+                                                <input type="radio" id="comprehensive" name="coverType" value="comprehensive">
+                                                Comprehensive
+                                            </label>
+                                            <label for="thirdPartyFireTheft">
+                                                <input type="radio" id="thirdPartyFireTheft" name="coverType" value="thirdPartyFireTheft">
+                                                Third Party, Fire & Theft
+                                            </label>
+                                        </fieldset>
                                     <fieldset>
                                         <legend>Insured Information</legend>
                                         <label for="insuredName">Insured Full Name:</label>
@@ -221,14 +220,142 @@
                     </div>
                 </div>
              </section>
+             <section id="agents" class="page">
+                <h1>Agents Section</h1>
+                <p>Join our team of experienced insurance agents by signing up and if already registered, log in to your account.</p>
+                <div class="agent-options">
+                    <a href="#" data-agent="sign-up" class="btn">Sign Up</a>
+                    <a href="#" data-agent="login" class="btn btn-outline">Login</a>
+                </div>
+                <!-- Agent Sign Up Form -->
+                 <div id="agentForms">
+                    <div id="sign-up" class="agent-forms">
+                        <h2>Agent Sign Up</h2>
+                        <form id="signUpForm">
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <label for="fullName">Full Name:</label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                                <label for="idNumber">ID Number:</label>
+                                <input type="text" id="idNumber" name="idNumber"  required placeholder="12345678">
+                                <label for="kraPin">KRA Pin:</label>
+                                <input type="text" id="kraPin" name="kraPin" required>
+                                <label for="gender">Gender:</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <label for="maritalStatus">Marital Status:</label>
+                                <select id="maritalStatus" name="maritalStatus" required>
+                                    <option value="">Select Marital Status</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                                <label for="email">Email Address:</label>
+                                <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="0700123456">
 
-            <!-- ========= SUPPORT PAGE =========
-             -->
-            <section id="support" class="page">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Academic Qualifications</legend>
+                                <label for="education">Education Level:</label>
+                                <select id="education" name="education" required>
+                                    <option value="">Select Education Level</option>
+                                    <option value="high-school">High School</option>
+                                    <option value="diploma">Diploma</option>
+                                    <option value="bachelor">Bachelor's Degree</option>
+                                    <option value="master">Master's Degree</option>
+                                    <option value="phd">PhD</option>
+                                </select>
+                                <label for="courseOfStudy">Course of Study:</label>
+                                <select name="courseOfStudy" id="courseOfStudy" required>
+                                    <option value="">Select Course of Study</option>
+                                    <option value="business-administration">Business Administration</option>
+                                    <option value="accounting">Accounting</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="actuarial-science">Actuarial Science</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </fieldset>
+                    
+                            <fieldset>
+                                <legend>Agency Information</legend>
+                                <label for="agencyName">Agency Name:</label>
+                                <input type="text" id="agencyName" name="agencyName" required placeholder="ABC Insurance Agency">
+                                <label for="licenseNumber">IRA License Number:</label>
+                                <input type="text" id="licenseNumber" name="licenseNumber" required placeholder="IRA123456">
+
+                            </fieldset>
+                            <fieldset>
+                                <legend>Location</legend>
+                                <label for="county">County:</label>
+                                <input type="text" id="county" name="county" required placeholder="Nairobi">
+                                <label for="town">Town:</label>
+                                <input type="text" id="town" name="town" required placeholder="Westlands">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Experience</legend>
+                                <label for="experience">Years of Experience:</label>
+                                <input type="number" id="experience" name="experience" required min="0">
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Account Security</legend>
+                                <label for="password">Password:</label>
+                                <input type="password" id="password" name="password" required placeholder="afq@123#" minlength="6">
+                                <label for="confirmPassword">Confirm Password:</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="afq@123#" minlength="6">
+                            </fieldset>
+                            <div id="signUpButtons">
+                                <button type="button" class="backToAgentOptions">Back</button>
+                                <button type="submit" class="signUp">Sign Up</button>
+                            </div>
+                            
+                        </form>
+                        
+                    </div>
+                    <!-- Agent Login Form -->
+                    <div id="login" class="agent-forms">
+                        <form id="loginForm">
+                            <fieldset>
+                                <legend>Agent Login</legend>
+                                <label for="loginEmail">Email Address:</label>
+                                <input type="email" id="loginEmail" name="loginEmail" required placeholder="john.doe@example.com">
+                                <label for="loginPassword">Password:</label>
+                                <input type="password" id="loginPassword" name="loginPassword" required placeholder="afq@123#">
+                            </fieldset>
+                            <!--- Forgot Password Link -->
+                            <p><a href="#forgotPassword">Forgot Password?</a></p>
+                            <div id="formButtons">
+                                <button type="button" class="backToAgentOptions">Back</button>
+                                <button type="submit">Login</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                </div>
+             </section>
+             <!-- ========= SUPPORT PAGE ========= -->
+             <section id="support" class="page">
                 <h1>Customer Support</h1>
-                <p>Contact our able Team through either of the platforms herein:</p>
-
-
+                <p>Need help or have questions?</p>
+                <p>Our customer support team is here to help you with any questions or concerns you may have about your insurance needs.</p>
+                <p>Contact our customer support team for assistance with your insurance needs.</p>
+                <div class="support-options">
+                    <a href="#" id="liveChatBtn" class="btn">Live Chat</a>
+                    <a href="#" id="whatsappBtn" class="btn btn-outline">WhatsApp</a>
+                    <a href="mailto:dikirrpatrick@gmail.com" class="btn btn-outline">Email Us</a>
+                    <a href="#" id="callBtn" class="btn btn-outline">Call Us</a>
+                    <a href="#" id="visitBtn" class="btn btn-outline">Visit Us</a>
+                    <a href="#" id="faqBtn" class="btn btn-outline">FAQs</a>
+                </div>
             </section>
 
         </main>

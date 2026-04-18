@@ -62,9 +62,9 @@ serviceButtons.forEach(button => {
 
 // ======================== Certificate Issuance ========================
 
-const businessRadios = document.querySelectorAll('input[name="businessType"]');
-const certificatesPage = document.querySelector(".certificates-page");
-const certIssuancePage = document.getElementById("certIssuance");
+const businessRadios = document.querySelectorAll('input[name="businessType"]'); // Select the radio buttons for business type
+const certificatesPage = document.querySelector(".certificates-page"); // Select the certificate options page
+const certIssuancePage = document.getElementById("certIssuance"); // Select the certificate issuance form page
 
 if (businessRadios && certificatesPage && certIssuancePage) {
     businessRadios.forEach(radio => {
@@ -92,6 +92,131 @@ if (backBtn) {
     });
 }
 
+// ======================== End of Certificate Issuance ========================
+// ======================== Agent Pages ========================
+
+// This section handles the agent account management pages. It allows agents to select different account-related options and displays the corresponding forms while hiding the options menu.
+const agentAccLinks = document.querySelectorAll("[data-agent]");
+const agentPages = document.querySelectorAll(".agent-forms");
+
+agentAccLinks.forEach(link => {
+    link.addEventListener("click", function () {
+        const target = this.getAttribute("data-agent");
+
+        // Hide all agent pages
+        agentPages.forEach(page => page.classList.remove("active"));
+
+        // Show selected agent page
+        const selected = document.getElementById(target);
+        if (selected) {
+            selected.classList.add("active");
+        }
+    });
+});
+
+// Show account forms and hide options on click
+const accOpenLinks = document.querySelectorAll(".agent-options a");
+const openingOptions = document.querySelector(".agent-options");
+const accForms = document.getElementById("agentForms");
+
+if (accOpenLinks && openingOptions && accForms) {
+    accOpenLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            // Hide opening options and show account forms
+            openingOptions.style.display = "none";
+            // Show account forms
+            accForms.style.display = "block";
+        }
+        );
+    });
+}
+
+// Back button functionality for agent account forms
+const backToAgentOptionsBtn = document.querySelectorAll(".backToAgentOptions");
+if (backToAgentOptionsBtn) {
+    backToAgentOptionsBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Hide account forms and show opening options
+            accForms.style.display = "none";
+            openingOptions.style.display = "flex";
+        });
+    });
+}
+
+
+
+// ======================== End of Agent Pages ========================
+
+// ======================== Support Page ========================
+// Whatsapp contact button functionality
+const whatsappBtn = document.getElementById("whatsappBtn");
+if (whatsappBtn) {
+    whatsappBtn.addEventListener("click", () => {
+        const phoneNumber = "+254794432488"; // Replace with actual phone number
+        const message = "Hello, I need help with my insurance policy.";
+
+        const encodedMessage = encodeURIComponent(message);
+        whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappBtn.href, "_blank");
+    });
+}
+
+// call functionality for support phone number
+const callBtn = document.getElementById("callBtn");
+if (callBtn) {
+    callBtn.addEventListener("click", () => {
+        const phoneNumber = "+254794432488"; // Replace with actual phone number
+        callBtn.href = `tel:${phoneNumber}`;
+        window.open(callBtn.href, "_blank");
+    });
+}
+
+// Email functionality for support email address
+const emailBtn = document.getElementById("emailBtn");
+if (emailBtn) {
+    emailBtn.addEventListener("click", () => {
+        const emailAddress = "dikirrpatrick@gmail.com"; // Replace with actual email address
+        emailBtn.href = `mailto:${emailAddress}`;
+        window.open(emailBtn.href, "_blank");
+    });
+}
+
+// live chat button functionality (opens a new window with the live chat page)
+const liveChatBtn = document.getElementById("liveChatBtn");
+if (liveChatBtn) {
+    liveChatBtn.addEventListener("click", () => {
+        alert("Live chat is currently unavailable. Please contact us via WhatsApp, phone, or email for assistance.");
+        //window.open("livechat.html", "_blank", "width=400,height=600");
+    });
+}
+
+// visit us button functionality (opens a new window with the location on Google Maps)
+const visitUsBtn = document.getElementById("visitUsBtn");
+if (visitUsBtn) {
+    visitUsBtn.addEventListener("click", () => {
+        const location = "Maryann Insurance Agency, Nairobi, Kenya"; // Replace with actual location
+        visitUsBtn.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
+        window.open(visitUsBtn.href, "_blank");
+    });
+}
+
+// faq button functionality (scrolls to the FAQ section on the support page)
+const faqBtn = document.getElementById("faqBtn");
+if (faqBtn) {
+    faqBtn.addEventListener("click", () => {
+        const faqSection = document.getElementById("faq");
+        if (faqSection) {
+            faqSection.scrollIntoView({ behavior: "smooth" });
+        }
+    });
+}       
+
+
+
+
+// ======================== End of Support Page ========================
 
 // footer year update
 const yearSpan = document.getElementById("year");
