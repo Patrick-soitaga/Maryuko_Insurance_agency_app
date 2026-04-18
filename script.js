@@ -153,7 +153,7 @@ if (backToAgentOptionsBtn) {
 const whatsappBtn = document.getElementById("whatsappBtn");
 if (whatsappBtn) {
     whatsappBtn.addEventListener("click", () => {
-        const phoneNumber = "+254794432488"; // Replace with actual phone number
+        const phoneNumber = "+254723888851"; // Replace with actual phone number
         const message = "Hello, I need help with my insurance policy.";
 
         const encodedMessage = encodeURIComponent(message);
@@ -167,7 +167,7 @@ if (whatsappBtn) {
 const callBtn = document.getElementById("callBtn");
 if (callBtn) {
     callBtn.addEventListener("click", () => {
-        const phoneNumber = "+254794432488"; // Replace with actual phone number
+        const phoneNumber = "+254723888851"; // Replace with actual phone number
         callBtn.href = `tel:${phoneNumber}`;
         window.open(callBtn.href, "_blank");
     });
@@ -196,7 +196,7 @@ if (liveChatBtn) {
 const visitUsBtn = document.getElementById("visitUsBtn");
 if (visitUsBtn) {
     visitUsBtn.addEventListener("click", () => {
-        const location = "Maryann Insurance Agency, Nairobi, Kenya"; // Replace with actual location
+        const location = "Maryuko Insurance Agency, Nairobi, Kenya"; // Replace with actual location
         visitUsBtn.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
         window.open(visitUsBtn.href, "_blank");
     });
@@ -291,7 +291,7 @@ setTimeout(typeEffect, 500);
 // Quote section dynamic content
 
 const quoteMessage = [
-    "Maryann Insurance Agency Quotation Portal...", 
+    "Maryuko Insurance Agency Quotation Portal...", 
     "Get your insurance quote instantly..."
 ];
 
